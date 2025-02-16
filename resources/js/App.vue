@@ -1,3 +1,9 @@
 <template>
-    <p class="display-3 fw-bold">hello world</p>
+    <Header/>
+    <div class="container">
+        <router-view/>
+    </div>
 </template>
+<script setup >
+    import Header from './components/layout/Header.vue'
+</script>
