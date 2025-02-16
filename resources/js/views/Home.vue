@@ -3,10 +3,12 @@
         <div class="col-12 vh-100 d-flex justify-content-center bg-dark align-items-center flex-column hero-page">
             <div class="hero-content text-center">
                 <p class="display-1 fw-bold text-light ">Andao Hanatsara ny ho avy.</p>
-                <p class="small text-light">" Fambolena maharitra sy maoderina"</p>
+                <p class="small text-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, quis.</p>
                 <div class="btn-group">
-                    <button class="btn btn-light px-3">Hisoratra</button>
-                    <button class="btn btn-dark px-3">Hijery misimisy</button>
+                    <button class="btn btn-light py-2 px-3">
+                        Hisoratra
+                    </button>
+                    <button class="btn btn-dark px-3 py-2">Hijery misimisy</button>
                 </div>
             </div>
         </div>
@@ -15,15 +17,16 @@
 
 <style scoped>
 .small {
-    font-size: smaller;
+    font-size: small;
 }
 
 .hero-page {
     position: relative;
     height: 100vh;
-    background-image: url('../assets/pexels-akos-szabo-145938-440731.jpg');
+    background-image: url('../assets/s-tsuchiya-U-wZQ_ZpQRU-unsplash.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
+    background-attachment: fixed;
 }
 
 .hero-page::before {
@@ -34,14 +37,13 @@
     right: 0;
     bottom: 0;
     background: inherit;
-    filter: blur(5px);
+    filter: blur(10px);
     z-index: 0;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    background-color: rgba(211, 211, 211, 0.253);
     padding: 40px;
     border-radius: 3px;
 }
