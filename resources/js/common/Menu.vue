@@ -1,6 +1,6 @@
 <template>
     <ul class="navbar-nav ms-auto me-auto">
-        <router-link active-class="active" class="mx-3 px-3 nav-items nav-link rounded" to="/">
+        <router-link active-class="active" class="mx-3 px-3  nav-items nav-link rounded" to="/">
             <i class="bi bi-house-door me-1"></i>
             Accueil
         </router-link>
@@ -20,6 +20,6 @@
 </template>
 <style scoped >
     .active{
-        background-color:rgba(59, 58, 58, 0.514);
+        background-color:rgba(59, 58, 58, 0.11);
     }
 </style>

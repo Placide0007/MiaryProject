@@ -5,10 +5,7 @@
                 <p class="display-1 fw-bold text-light ">Andao Hanatsara ny ho avy.</p>
                 <p class="small text-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, quis.</p>
                 <div class="btn-group">
-                    <button class="btn btn-light py-2 px-3">
-                        Hisoratra
-                    </button>
-                    <button class="btn btn-dark px-3 py-2">Hijery misimisy</button>
+                    <button class="btn btn-dark py-2">Voir Plus d'information</button>
                 </div>
             </div>
         </div>
@@ -37,7 +34,7 @@
     right: 0;
     bottom: 0;
     background: inherit;
-    filter: blur(10px);
+    filter: blur(5px);
     z-index: 0;
 }
 

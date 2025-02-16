@@ -1,5 +1,7 @@
 *{
     font-family: Poppins;
-    font-weight: 400;
-    font-size: 13px;
+    font-size: 14px;
+}
+input{
+    padding: 12px  !important ;
 }

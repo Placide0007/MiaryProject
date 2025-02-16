@@ -1,6 +1,6 @@
 <template>
     <Header/>
-    <div class="container-fluid">
+    <div class="container-fluid bg-dark">
         <router-view/>
     </div>
 </template>

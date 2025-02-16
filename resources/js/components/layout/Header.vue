@@ -1,5 +1,5 @@
 <template>
-    <header class="navbar navbar-expand-md bg-dark navbar-dark py-2 px-4 sticky-top shadow ">
+    <header class="navbar navbar-expand-md bg-light navbar-light py-2 px-4 sticky-top shadow ">
         <a href="" class="navbar-brand  text-success fw-bold">
             Tantsaha
         </a>
@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="content">
             <Menu/>
             <form action="">
-                <router-link active-class="active" class="btn btn-success px-3" to="/login" >
+                <router-link active-class="active" class="btn btn-success px-3" to="/register" >
                     <i class="bi bi-box-arrow-in-right"></i>
                     Se connecter
                 </router-link>
