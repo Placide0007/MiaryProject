@@ -1,12 +1,12 @@
 <template>
     <div class="row">
-        <div class="col-12 vh-100 d-flex justify-content-center bg-dark  align-items-center flex-column hero-page">
+        <div class="col-12 vh-100 d-flex justify-content-center bg-dark align-items-center flex-column hero-page">
             <div class="hero-content text-center">
-                <p class="display-1 fw-bold text-light">Lorem, ipsum dolor.</p>
-                <p class="small text-light">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <p class="display-1 fw-bold text-light ">Andao Hanatsara ny ho avy.</p>
+                <p class="small text-light">" Fambolena maharitra sy maoderina"</p>
                 <div class="btn-group">
-                    <button class="btn btn-light px-3">S'inscrire</button>
-                    <button class="btn btn-outline-light px-3">A Propos</button>
+                    <button class="btn btn-light px-3">Hisoratra</button>
+                    <button class="btn btn-dark px-3">Hijery misimisy</button>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
 }
 
 .hero-page {
-    position: relative; /* Nécessaire pour positionner l'image floue */
+    position: relative;
     height: 100vh;
     background-image: url('../assets/pexels-akos-szabo-145938-440731.jpg');
     background-size: cover;
@@ -41,5 +41,12 @@
 .hero-content {
     position: relative;
     z-index: 1;
+    background-color: rgba(211, 211, 211, 0.253);
+    padding: 40px;
+    border-radius: 3px;
+}
+
+p {
+    font-family: Raleway;
 }
 </style>

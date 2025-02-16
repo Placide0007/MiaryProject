@@ -1,7 +1,7 @@
 <template>
     <header class="navbar navbar-expand-md bg-dark navbar-dark py-2 px-4 sticky-top">
-        <a href="" class="navbar-brand">
-            LOGO
+        <a href="" class="navbar-brand  text-success fw-bold">
+            Tantsaha
         </a>
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#content">
             <i class="navbar-toggler-icon"></i>
