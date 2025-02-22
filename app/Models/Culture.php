@@ -10,7 +10,8 @@ class Culture extends Model
         'title',
         'description',
         'user_id',
-        'image'
+        'image',
+        'audio',
     ];
     public function user(){
         return $this->belongsTo(User::class);

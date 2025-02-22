@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('image')->nullable();
+            $table->string('audio')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

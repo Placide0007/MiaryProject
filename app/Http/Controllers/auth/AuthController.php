@@ -24,7 +24,7 @@ class AuthController extends Controller
             'name' => $request->name
         ]);
         Auth::login($user);
-        return redirect()->route('cultures.create');
+        return redirect()->route('cultures.index');
     }
 
     public function loginForm()
@@ -37,7 +37,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('cultures.create');
+            return redirect()->route('cultures.index');
         }
     }
 

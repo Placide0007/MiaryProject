@@ -14,7 +14,7 @@ class CultureController extends Controller
      */
     public function index()
     {
-        $cultures = Culture::with('user')->latest()->get();
+        $cultures = Culture::with('user')->latest()->paginate(5);
         return view('culture.index', compact('cultures'));
     }
 
@@ -36,12 +36,18 @@ class CultureController extends Controller
         {
             $imgpath = $cultureRequest->file('image')->store('images','public');
         }
-        
+
+        $audiopath = null;
+        if($cultureRequest->hasFile('audio')){
+            $audiopath = $cultureRequest->file('audio')->store('audios','public');
+        }
+
         Culture::create([
             'title' => $cultureRequest->title,
             'description' => $cultureRequest->description,
             'user_id' => Auth::id(),
-            'image' => $imgpath  ?? null 
+            'image' => $imgpath  ?? null,
+            'audio' => $audiopath  ?? null
         ]);
         return redirect()->route('cultures.index');
     }
@@ -51,7 +57,8 @@ class CultureController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $culture = Culture::findOrFail($id);
+        return view('culture.show', compact('culture'));
     }
 
     /**

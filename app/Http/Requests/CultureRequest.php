@@ -23,8 +23,11 @@ class CultureRequest extends FormRequest
     {
         return [
             'title' => ['required','string','max:255'],
-            'description' => ['required','string','max:400'],
-            'image' => ['nullable','mimes:png,jpg,gif','max:8000'],
+            'description' => ['required','string','max:6000'],
+            'image' => ['nullable','mimes:png,jpg,gif','max:20000'],
+            'audio' => ['nullable', 'mimes:mp3,wav,ogg', 'max:20000'],
         ];
     }
 }
+
+

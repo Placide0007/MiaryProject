@@ -1,16 +1,19 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 *{
     font-family: Raleway;
-    font-weight: 400;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .card {
-    min-height: 100px; 
+    min-height: 100px;
     display: flex;
     flex-direction: column;
 }
 
 .card-body {
     flex-grow: 1;
+}
+
+input{
+    padding: 10px !important;
 }

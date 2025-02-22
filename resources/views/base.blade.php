@@ -7,8 +7,8 @@
     <title> @yield('title') </title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
-    <section class="container-fluid p-3 bg-dark min-vh-100">
+<body class="bg-dark" >
+    <section class="container-fluid p-3 bg-dark">
         @yield('content')
     </section>
 </body>
