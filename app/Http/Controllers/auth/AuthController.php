@@ -18,12 +18,13 @@ class AuthController extends Controller
 
     public function register(RegisterRequest $request)
     {
-        User::create([
+        $user = User::create([
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'name' => $request->name
         ]);
-        return view('home.index');
+        Auth::login($user);
+        return redirect()->route('cultures.create');
     }
 
     public function loginForm()
@@ -36,7 +37,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return view('home.index');
+            return redirect()->route('cultures.create');
         }
     }
 

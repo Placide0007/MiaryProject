@@ -1,7 +1,16 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
 *{
-    font-family: Poppins;
+    font-family: Raleway;
+    font-weight: 400;
     font-size: 14px;
 }
-input{
-    padding: 12px  !important ;
+
+.card {
+    min-height: 100px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex-grow: 1;
 }

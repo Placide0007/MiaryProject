@@ -4,7 +4,7 @@
 
 @section('content')
   <p>home page</p>
-  <form action="" method="POST" >
+  <form action="{{ route('logout') }}" method="post" >
     @csrf
     <button>Deconnexion</button>
   </form>

@@ -1,21 +1,24 @@
 <?php
 
 use App\Http\Controllers\auth\AuthController;
+use App\Http\Controllers\CultureController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('auth.register');
 });
 
-Route::middleware('guest')->group(function(){
-    Route::get('/register',[AuthController::class,'registerForm'])->name('register');
-    Route::post('/register',[AuthController::class,'register']);
-    Route::get('/login',[AuthController::class,'loginForm'])->name('login');
-    Route::post('/login',[AuthController::class,'login']);
-});
+Route::get('/home',function(){
+    return view('home.index');
+})->name('home');
 
-Route::middleware('auth')->group(function(){
-    Route::post('/logout',[AuthController::class,'logout']);
-    Route::post('/logout',[AuthController::class,'logout']);
-});
+
+Route::get('/register',[AuthController::class,'registerForm'])->name('register');
+Route::post('/register',[AuthController::class,'register']);
+Route::get('/login',[AuthController::class,'loginForm'])->name('login');
+Route::post('/login',[AuthController::class,'login']);
+
+
+Route::post('/logout',[AuthController::class,'logout'])->name('logout');
+Route::resource('cultures',CultureController::class);
 
