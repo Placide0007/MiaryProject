@@ -1,7 +1,7 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 *{
     font-family: Raleway;
-    font-size: 13px;
+    font-size: 13.75px;
 }
 
 .card {
@@ -16,4 +16,14 @@
 
 input{
     padding: 10px !important;
+}
+
+.active-link{
+    border-bottom: 3px solid green;
+    background-color: rgba(211, 211, 211, 0.438);
+}
+
+.right{
+    position: fixed;
+    right: 0;
 }

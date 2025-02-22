@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\auth\AuthController;
 use App\Http\Controllers\CultureController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,4 +22,5 @@ Route::post('/login',[AuthController::class,'login']);
 
 Route::post('/logout',[AuthController::class,'logout'])->name('logout');
 Route::resource('cultures',CultureController::class);
+Route::resource('posts',PostController::class);
 

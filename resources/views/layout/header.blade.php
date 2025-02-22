@@ -2,7 +2,6 @@
 
     <!-- Logo -->
     <a class="navbar-brand" href="">
-        <img src="{{ asset('blog.png') }}" alt="logo" width="25">
         <span class="fs-6">Lorem ipsum dolor!</span>
     </a>
 
@@ -16,18 +15,13 @@
         <ul class="navbar-nav ms-auto me-auto">
             <!-- Liens principaux -->
             <li class="nav-item">
-                <a href="" class="px-3 px-md-2 nav-link {{ request()->routeIs('posts.index') ? 'active-link' : 'hover' }}">Accueil</a>
+                <a href="{{ route('cultures.index') }}" class="px-3 px-md-2 nav-link {{ request()->routeIs('cultures.index') ? 'active-link' : 'hover' }}">Accueil</a>
             </li>
             <lin class="nav-item ms-md-5">
-                <a href="" class="nav-link hover">Forum</a>
+                <a href="{{ route('posts.index') }}" class="nav-link hover {{ request()->routeIs('posts.index') ? 'active-link' : 'hover' }}">Forum</a>
             </lin>
             <li class="nav-item ms-md-5">
                 <a href="" class="nav-link hover">A propos</a>
-                @auth
-                <li class="nav-item ms-md-5 bg-secondary">
-                    <a href="{{ route('cultures.create') }}" class="nav-link text-light px-3 px-md-2">Nouveau culture</a>
-                </li>
-            @endauth
             </li>
         </ul>
 

@@ -7,8 +7,17 @@
 @section('content')
     <div class="row">
         @if ($cultures->isEmpty())
-            <p class="text-center lead bg-light fw-bold border p-3">Aucun culture ajouter</p>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <p class="text-center lead text-light p-3">Aucun culture ajouté</p>
+        </div>
+        <div class="col-md-3 right">
+            <a class="btn btn-primary" href="{{ route('posts.create') }}">Nouveau culture</a>
+        </div>
         @else
+        <div class="col-12 mb-5 d-flex justify-content-end">
+            <a class="btn btn-primary" href="{{ route('cultures.create') }}">Nouveau culture</a>
+        </div>
             @foreach ($cultures as $culture)
                 <div class="col-md-3 mb-3">
                     <a class="text-decoration-none" href="{{ route('cultures.show', $culture) }}">
@@ -35,3 +44,4 @@
         @endif
     </div>
 @endsection
+

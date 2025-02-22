@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
+use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -11,7 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        
+        $posts = Post::orderBy("created_at","desc")->paginate(5);
+        return view("post.index", compact("posts"));
     }
 
     /**
@@ -19,15 +23,26 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('post.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        
+        $imgpath = null;
+        if($request->hasFile('image'))
+        {
+            $imgpath = $request->file('image')->store('images','public');
+        }
+        Post::create([
+            'content'=> $request->content,
+            'user_id'=> Auth::id(),
+            'image' => $imgpath ?? null
+        ]);
+
+        return redirect()->route('posts.index');
     }
 
     /**
