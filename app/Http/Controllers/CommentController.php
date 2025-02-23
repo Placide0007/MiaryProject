@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PostRequest;
-use App\Models\Post;
+use App\Http\Requests\CommentRequest;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class PostController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($postId)
     {
-        $posts = Post::orderBy("created_at","desc")->paginate(5);
-        return view("post.index", compact("posts"));
+        $comments = Comment::where('post_id', $postId)->get();
+        return view('post.show', compact("comments"));
     }
 
     /**
@@ -23,26 +23,21 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(PostRequest $request)
+    public function store(CommentRequest $request)
     {
-        $imgpath = null;
-        if($request->hasFile('image'))
-        {
-            $imgpath = $request->file('image')->store('images','public');
-        }
-        Post::create([
-            'content'=> $request->content,
-            'user_id'=> Auth::id(),
-            'image' => $imgpath ?? null
+        Comment::create([
+            'comment' => $request->comment,
+            'post_id' => $request->post_id,
+            'user_id' => Auth::id(),
         ]);
 
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.show', $request->post_id);
     }
 
     /**
@@ -50,8 +45,7 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        $post = Post::with('comments.user')->findOrFail($id);
-        return view('post.show', compact('post'));
+        //
     }
 
     /**
@@ -75,6 +69,9 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $comment = Comment::findOrFail($id);
+        $postId = $comment->post_id;
+        $comment->delete();
+        return redirect()->route('posts.show', $postId);
     }
 }

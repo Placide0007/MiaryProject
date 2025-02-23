@@ -24,7 +24,7 @@
             </div>
             <div>
                 <label for="">A déjà un compte?</label>
-                <a class="fw-bold" href="">Connexion</a>
+                <a class="fw-bold" href="{{ route('login')}}">Connexion</a>
             </div>
         </form>
     </div>
