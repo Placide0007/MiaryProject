@@ -39,18 +39,24 @@
                                     {{ $culture->description }}
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <p class="text-end figure-caption small border rounded px-2">
-                                        {{ \Carbon\Carbon::parse($culture->created_at)->format('Y-m-d H:i') }}</p>
                                     @if (auth()->user()->isAdmin())
-                                        <form action="{{ route('cultures.destroy', $culture) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-sm btn-outline-danger small">
-                                                supprimer
-                                            </button>
-                                        </form>
+                                    <form action="{{ route('cultures.edit', $culture) }}" method="GET">
+                                        @csrf
+                                        <button class="btn btn-sm btn-outline-success small">
+                                            modifier
+                                        </button>
+                                    </form>
+                                    <form action="{{ route('cultures.destroy', $culture) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-sm btn-outline-danger small">
+                                            supprimer
+                                        </button>
+                                    </form>
                                     @endif
                                 </div>
+                                <p class="text-end figure-caption small  rounded px-2">
+                                    {{ \Carbon\Carbon::parse($culture->created_at)->format('Y-m-d H:i') }}</p>
                             </div>
                         </div>
                     </a>

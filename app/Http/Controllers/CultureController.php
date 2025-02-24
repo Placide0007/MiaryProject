@@ -67,16 +67,51 @@ class CultureController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $culture = Culture::findOrFail($id);
+        return view('culture.create', compact('culture'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(CultureRequest $cultureRequest, string $id)
     {
-        //
+        $culture = Culture::findOrFail($id);
+
+
+        $culture->title = $cultureRequest->input('title');
+        $culture->description = $cultureRequest->input('description');
+
+
+        if ($cultureRequest->hasFile('image')) {
+
+            if ($culture->image) {
+                Storage::delete('public/' . $culture->image);
+            }
+
+            $imgpath = $cultureRequest->file('image')->store('images', 'public');
+            $culture->image = $imgpath;
+        }
+
+
+        if ($cultureRequest->hasFile('audio')) {
+
+            if ($culture->audio) {
+                Storage::delete('public/' . $culture->audio);
+            }
+
+            $audiopath = $cultureRequest->file('audio')->store('audios', 'public');
+
+            $culture->audio = $audiopath;
+        }
+
+
+        $culture->save();
+
+
+        return redirect()->route('cultures.index', $culture->id);
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -94,3 +129,6 @@ class CultureController extends Controller
         return redirect()->route('cultures.index',compact('culture'));
     }
 }
+
+
+
