@@ -15,7 +15,7 @@ class CultureController extends Controller
      */
     public function index()
     {
-        $cultures = Culture::with('user')->latest()->paginate(5);
+        $cultures = Culture::with('user')->latest()->paginate(8);
         return view('culture.index', compact('cultures'));
     }
 

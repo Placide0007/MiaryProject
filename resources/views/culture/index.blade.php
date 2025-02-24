@@ -33,22 +33,24 @@
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <p class="card-text lead fw-bold text-primary">{{ ucfirst($culture->title) }}</p>
-                                    @if (auth()->user()->isAdmin())
-                                        <form action="{{ route('cultures.destroy',$culture) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-sm btn-outline-danger px-3">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </form>
-                                    @endif
                                 </div>
                                 <p
                                     style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;"class="card-text">
                                     {{ $culture->description }}
                                 </p>
-                                <p class="text-end figure-caption small">
-                                    {{ \Carbon\Carbon::parse($culture->created_at)->format('Y-m-d H:i') }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="text-end figure-caption small border rounded px-2">
+                                        {{ \Carbon\Carbon::parse($culture->created_at)->format('Y-m-d H:i') }}</p>
+                                    @if (auth()->user()->isAdmin())
+                                        <form action="{{ route('cultures.destroy', $culture) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-sm btn-outline-danger small">
+                                                supprimer
+                                            </button>
+                                        </form>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </a>
@@ -60,3 +62,5 @@
         @endif
     </div>
 @endsection
+
+
