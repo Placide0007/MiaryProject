@@ -4,21 +4,25 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-6 offset-3 py-3 border vh-100 px-3 bg-white">
+        <div class="col-md-6 offset-md-3 py-3 border vh-100 px-3 bg-white">
             <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <textarea placeholder="Entrer le description du culture" class="form-control" name="content" id="" cols="40"
-                        rows="10"></textarea>
+                    <textarea placeholder="Entrer le description du culture" class="form-control @error('content') is-invalid @enderror"
+                        name="content"  id="" cols="40" rows="10">{{ old('content') }}</textarea>
                     @error('content')
-                        {{ $message }}
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
                     @enderror
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Image</label>
-                    <input name="image" class="form-control" type="file">
+                    <input name="image" value="{{ old('image') }}" class="form-control @error('image') is-invalid @enderror " type="file">
                     @error('image')
-                        {{ $message }}
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
                     @enderror
                 </div>
                 <div>

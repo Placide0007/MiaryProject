@@ -12,9 +12,9 @@
                 @endif
                 <div class="card-body">
                     <p class="card-text lead fw-bold text-primary">{{ ucfirst($culture->title) }}</p>
-                    <button class="btn btn-light mb-2 btn-sm">{{ date('Y-m-d', strtotime($culture->created_at)) }}</button>
+                    <button class="btn btn-light mb-2 btn-sm">{{ \Carbon\Carbon::parse($culture->created_at)->format('Y-m-d H:i') }}</button>
                     @if ($culture->audio)
-                        <audio controls class="w-100" >
+                        <audio controls class="w-100">
                             <source src="{{ asset('storage/' . $culture->audio) }}" type="audio/mpeg">
                         </audio>
                     @endif

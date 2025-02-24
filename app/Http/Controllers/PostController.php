@@ -6,6 +6,7 @@ use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -75,6 +76,32 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $post = Post::findOrFail($id);
+
+        $post->comments()->delete();
+
+        if ($post->image) {
+            Storage::delete('public/' . $post->image);
+        }
+
+        $post->delete();
+
+        return redirect()->route('posts.index',compact('post'));
+    }
+
+    public function toggleLike(Post $post){
+        $reaction = $post->reactions()->where('user_id', Auth::id())->first();
+        if($reaction){
+            $reaction->liked  = ! $reaction->liked;
+            $reaction->save();
+        }
+        else{
+            $post->reactions()->create([
+                'liked' => true ,
+                'user_id' => Auth::id()
+            ]);
+        }
+
+        return back();
     }
 }

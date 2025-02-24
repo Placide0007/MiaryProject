@@ -53,4 +53,22 @@ class User extends Authenticatable
     public function comments(){
         return $this->hasMany(Comment::class);
     }
+
+    public function isAdmin(){
+        return $this->role === 'admin';
+    }
+
+    public function isUser(){
+        return $this->role === 'user';
+    }
+
+    public function reactions(){
+        return $this->hasMany(Reaction::class);
+    }
+
+    public function hasLiked(Post $post)
+    {
+        return $this->reactions()->where('post_id', $post->id)->where('liked', true)->exists();
+    }
+
 }

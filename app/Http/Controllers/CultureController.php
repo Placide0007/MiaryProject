@@ -6,6 +6,7 @@ use App\Http\Requests\CultureRequest;
 use App\Models\Culture;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class CultureController extends Controller
 {
@@ -82,6 +83,14 @@ class CultureController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $culture = Culture::findOrFail($id);
+
+        if($culture->image){
+            Storage::delete('public/'. $culture->image);
+        }
+
+        $culture->delete();
+
+        return redirect()->route('cultures.index',compact('culture'));
     }
 }

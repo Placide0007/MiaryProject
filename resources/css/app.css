@@ -27,3 +27,7 @@ input{
     position: fixed;
     right: 0;
 }
+
+.small{
+    font-size:10px !important;
+}

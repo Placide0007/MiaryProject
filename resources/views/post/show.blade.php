@@ -31,8 +31,7 @@
                 <div class="mb-3 border border px-3 mt-3 p-4">
                     <div class="d-flex justify-content-between align-items-center">
                         <button class="btn btn-dark px-3">{{ ucfirst($comment->user->name) }}</button>
-                        @if (auth()->user()->id === $comment->user->id)
-                            <!-- Vérification si l'utilisateur est le propriétaire du commentaire -->
+                        @if (auth()->user()->id === $comment->user->id || auth()->user()->isAdmin())
                             <form action="{{ route('comments.destroy', $comment) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -40,7 +39,7 @@
                             </form>
                         @endif
                     </div>
-                    <p class="figure-caption mt-1">{{ date('Y-m-d', strtotime($comment->user->created_at)) }}</p>
+                    <p class="figurec-caption small">{{ \Carbon\Carbon::parse($comment->created_at)->format('Y-m-d H:i') }}</p>
                     <p class="">{{ $comment->comment }}</p>
                 </div>
             @endforeach

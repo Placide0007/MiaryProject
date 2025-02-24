@@ -38,14 +38,15 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->route('cultures.index');
-        }
+        } else
+            return back()->withErrors(['email' => 'Information incorrects'])->withInput();
     }
 
-    public function logout(Request $request){
-       Auth::logout();
-       $request->session()->invalidate();
-       $request->session()->regenerateToken();
-       return  redirect()->route('login');
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return  redirect()->route('login');
     }
-
 }
