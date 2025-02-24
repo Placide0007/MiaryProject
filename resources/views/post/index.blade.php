@@ -16,7 +16,7 @@
             </div>
         @else
             <div class="col-md-3">
-
+                
             </div>
 
             <div class="col-md-6 mb-3">
@@ -43,12 +43,15 @@
                                     style="height: 400px; object-fit: cover;">
                             @endif
                             <div class="mt-3 d-flex justify-content-between align-items-center">
-                                <i class="bi bi-chat-square"></i>
-                                {{ $post->comments->count() }}
+                                <div>
+                                    <i class="bi bi-chat-square"></i>
+                                    {{ $post->comments->count() }} commentaire{{ $post->comments->count() > 1 ? 's' : '' }}
+                                </div>
                                 <form action="{{ route('posts.toggleLike', $post) }}" method="POST">
                                     @csrf
                                     <button type="submit" class="btn btn-outline-primary">
-                                        <i class="bi {{ auth()->user()->hasLiked($post) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
+                                        <i
+                                            class="bi {{ auth()->user()->hasLiked($post) ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up' }}"></i>
                                         {{ $post->reactions->where('liked', true)->count() }}
                                     </button>
                                 </form>

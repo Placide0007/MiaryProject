@@ -4,6 +4,9 @@
 
 @section('content')
     <div class="row">
+        <div class="col-md-3 m-4 m-md-1">
+
+        </div>
         <div class="col-md-6 offset-md-3 py-3 border px-3 bg-white">
             <div class="card" style="width:100%;">
                 @if (isset($post->image))
@@ -43,7 +46,9 @@
                     <p class="">{{ $comment->comment }}</p>
                 </div>
             @endforeach
-
+        </div>
+        <div class="col-md-3 right">
+            <a class="btn btn-primary" href="{{ route('posts.index') }}">Retour à la page d'accueil</a>
         </div>
     </div>
 @endsection
