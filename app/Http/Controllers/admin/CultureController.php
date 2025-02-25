@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\CultureRequest;
 use App\Models\Culture;
 use Illuminate\Http\Request;
@@ -10,21 +11,20 @@ use Illuminate\Support\Facades\Storage;
 
 class CultureController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $cultures = Culture::with('user')->latest()->paginate(8);
         return view('culture.index', compact('cultures'));
+
     }
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('culture.create');
+        return view('admin.create');
     }
 
     /**
@@ -68,7 +68,7 @@ class CultureController extends Controller
     public function edit(string $id)
     {
         $culture = Culture::findOrFail($id);
-        return view('culture.create', compact('culture'));
+        return view('admin.create', compact('culture'));
     }
 
     /**
@@ -128,7 +128,6 @@ class CultureController extends Controller
 
         return redirect()->route('cultures.index',compact('culture'));
     }
+
+
 }
-
-
-

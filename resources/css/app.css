@@ -31,3 +31,9 @@ input{
 .small{
     font-size:10px !important;
 }
+
+.sticky{
+    position: sticky;
+    top: 100px;
+}
+
