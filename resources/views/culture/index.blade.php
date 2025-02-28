@@ -9,17 +9,17 @@
         @if ($cultures->isEmpty())
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <p class="text-center lead text-light p-3">Aucun culture ajouté</p>
+                <p class="text-center lead text-light p-3">Aucune culture ajoutée</p>
             </div>
             @if (auth()->user()->isAdmin())
                 <div class="col-md-3 right">
-                    <a class="btn btn-primary" href="{{ route('cultures.create') }}">Nouveau culture</a>
+                    <a class="btn btn-primary" href="{{ route('cultures.create') }}">Nouvelle culture</a>
                 </div>
             @endif
         @else
             @if (auth()->user()->isAdmin())
                 <div class="col-12 mb-5 d-flex justify-content-end">
-                    <a class="btn btn-primary" href="{{ route('cultures.create') }}">Nouveau culture</a>
+                    <a class="btn btn-primary" href="{{ route('cultures.create') }}">Nouvelle culture</a>
                 </div>
             @endif
             @foreach ($cultures as $culture)

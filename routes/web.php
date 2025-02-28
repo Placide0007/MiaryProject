@@ -26,6 +26,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('posts', PostController::class);
     Route::resource('comments', CommentController::class);
     Route::post('/posts/{post}/toggle-like', [PostController::class, 'toggleLike'])->name('posts.toggleLike');
+    Route::get('/profil' , function(){
+        return view('profil.profil');
+    } )->name('profil');
 });
 
 Route::resource('users', UserController::class);

@@ -32,7 +32,7 @@
                     {{ ucfirst(auth()->user()->name) }}
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="dropdownMenuLink" style="width: 10px;">
-                    <li><a class="dropdown-item" href="#">Mon Profil</a></li>
+                    <li><a class="dropdown-item" href="{{ route('profil') }}">Mon Profil</a></li>
                     <li>
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
@@ -54,3 +54,4 @@
     </nav>
 
 </header>
+
