@@ -39,7 +39,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             return redirect()->route('cultures.index');
         } else
-            return back()->withErrors(['email' => 'Information incorrects'])->withInput();
+            return back()->withErrors(['email' => 'Les Informations  saisi sont incorrects'])->withInput();
     }
 
     public function logout(Request $request)

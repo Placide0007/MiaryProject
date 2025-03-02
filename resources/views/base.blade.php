@@ -8,8 +8,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-dark" >
-    <section class="container-fluid p-4 ">
+    <section class="container p-4 ">
         @yield('content')
     </section>
 </body>
 </html>
+
+

@@ -19,7 +19,7 @@
                         </audio>
                     @endif
                     <p class="card-text">
-                        {{ $culture->description }}
+                       {!! nl2br(e($culture->description)) !!}
                     </p>
                 </div>
             </div>

@@ -8,7 +8,7 @@
             <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <textarea placeholder="Entrer le description du culture" class="form-control @error('content') is-invalid @enderror"
+                    <textarea placeholder="Description...." class="form-control @error('content') is-invalid @enderror"
                         name="content"  id="" cols="40" rows="10">{{ old('content') }}</textarea>
                     @error('content')
                         <div class="invalid-feedback">
