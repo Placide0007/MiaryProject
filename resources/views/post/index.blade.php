@@ -12,7 +12,7 @@
                 <p class="text-center lead text-light p-3">Aucun post ajouté</p>
             </div>
             <div class="col-md-3 right">
-                <a class="btn btn-primary" href="{{ route('posts.create') }}">Publier un article</a>
+                <a class="btn btn-primary" href="{{ route('posts.create') }}">Hamoaka lahatsoratra</a>
             </div>
         @else
             <div class="col-md-3">
@@ -66,7 +66,7 @@
             </div>
 
             <div class="col-md-3 right">
-                <a class="btn btn-primary" href="{{ route('posts.create') }}">Publier un article</a>
+                <a class="btn btn-primary" href="{{ route('posts.create') }}">Hamoaka lahatsoratra</a>
             </div>
         @endif
     </div>

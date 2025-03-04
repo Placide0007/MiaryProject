@@ -13,13 +13,13 @@
             </div>
             @if (auth()->user()->isAdmin())
                 <div class="col-md-3 right">
-                    <a class="btn btn-primary" href="{{ route('cultures.create') }}">Nouvelle culture</a>
+                    <a class="btn btn-primary" href="{{ route('cultures.create') }}">Voly vaovao</a>
                 </div>
             @endif
         @else
             @if (auth()->user()->isAdmin())
                 <div class="col-12 mb-5 d-flex justify-content-end">
-                    <a class="btn btn-primary" href="{{ route('cultures.create') }}">Nouvelle culture</a>
+                    <a class="btn btn-primary" href="{{ route('cultures.create') }}">Voly vaovao</a>
                 </div>
             @endif
             @foreach ($cultures as $culture)

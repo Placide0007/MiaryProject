@@ -8,7 +8,7 @@
             <div class="card" style="width:100%;">
                 @if (isset($culture->image))
                     <img src="{{ asset('storage/' . $culture->image) }}" alt=""
-                        class="img-fluid"style="height: 500px; object-fit: cover;">
+                        class="img-fluid"style="height: 600px; object-fit: cover;">
                 @endif
                 <div class="card-body">
                     <p class="card-text lead fw-bold text-primary">{{ ucfirst($culture->title) }}</p>

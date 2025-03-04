@@ -2,7 +2,7 @@
 
     <!-- Logo -->
     <a class="navbar-brand" href="">
-        <span class="fs-6">Lorem ipsum dolor!</span>
+        <span class="fs-5 fw-bold text-success">AgriMada</span>
     </a>
 
     <!-- Bouton de menu (mobile) -->
@@ -15,13 +15,13 @@
         <ul class="navbar-nav ms-auto me-auto">
             <!-- Liens principaux -->
             <li class="nav-item">
-                <a href="{{ route('cultures.index') }}" class="px-3 px-md-2 nav-link {{ request()->routeIs('cultures.index') ? 'active-link' : 'hover' }}">Accueil</a>
+                <a href="{{ route('cultures.index') }}" class="px-3 px-md-2 nav-link {{ request()->routeIs('cultures.index') ? 'active-link' : 'hover' }}">Fandraisana</a>
             </li>
             <lin class="nav-item ms-md-5">
                 <a href="{{ route('posts.index') }}" class="nav-link hover {{ request()->routeIs('posts.index') ? 'active-link' : 'hover' }}">Forum</a>
             </lin>
             <li class="nav-item ms-md-5">
-                <a href="" class="nav-link hover">A propos</a>
+                <a href="" class="nav-link hover">Mikasika anay</a>
             </li>
         </ul>
 
@@ -32,11 +32,11 @@
                     {{ ucfirst(auth()->user()->name) }}
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="dropdownMenuLink" style="width: 10px;">
-                    <li><a class="dropdown-item" href="{{ route('profil') }}">Mon Profil</a></li>
+                    <li><a class="dropdown-item" href="{{ route('profil') }}">Mikasika Ahy</a></li>
                     <li>
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
-                            <button type="submit" class="dropdown-item">Déconnexion</button>
+                            <button type="submit" class="dropdown-item">Hiala</button>
                         </form>
                     </li>
                 </ul>
