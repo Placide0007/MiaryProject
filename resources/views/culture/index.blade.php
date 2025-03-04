@@ -45,14 +45,14 @@
                                         <form action="{{ route('cultures.edit', $culture) }}" method="GET">
                                             @csrf
                                             <button class="btn btn-sm btn-outline-success small">
-                                                modifier
+                                                Hanova
                                             </button>
                                         </form>
                                         <form action="{{ route('cultures.destroy', $culture) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-sm btn-outline-danger small">
-                                                supprimer
+                                                Hamafa
                                             </button>
                                         </form>
                                     @endif

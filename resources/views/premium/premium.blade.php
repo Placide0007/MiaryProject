@@ -20,7 +20,7 @@
             </div>
             <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                <h1>Mode de payement</h1>
+                <h1>Fomba fandoavam-bola</h1>
                 <select class="form-control mb-3"   name="" id="">
                     <option value="Mvola">Mvola</option>
                     <option value="Orange Money">Orange Money</option>

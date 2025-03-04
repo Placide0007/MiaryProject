@@ -11,7 +11,7 @@
                 @endif
                 @csrf
                 <div class="input-group mb-3">
-                    <button class="input-group-text btn-primary btn">Titre</button>
+                    <button class="input-group-text btn-primary btn">Lohateny</button>
                     <input class="form-control @error('title') is-invalid @enderror" type="text" name="title" value="{{ old('title', $culture->title ?? '') }}" id="">
                     @error('title')
                         <div class="invalid-feedback">
@@ -20,7 +20,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <textarea placeholder="Entrer la description de la culture" class="form-control @error('description') is-invalid @enderror"
+                    <textarea placeholder="Mombamomba an'ilay voly" class="form-control @error('description') is-invalid @enderror"
                         name="description" id="" cols="40" rows="10">{{ old('description', $culture->description ?? '') }}</textarea>
                     @error('description')
                         <div class="invalid-feedback">
@@ -29,7 +29,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="image" class="form-label">Image</label>
+                    <label for="image" class="form-label">Sary</label>
                     <input name="image" class="form-control @error('image') is-invalid @enderror" type="file" value="{{ old('image') }}">
                     @error('image')
                         <div class="invalid-feedback">
@@ -47,7 +47,7 @@
                     @enderror
                 </div>
                 <div>
-                    <input class="form-control btn btn-success" type="submit" value="{{ isset($culture) ? 'Modifier' : 'Ajouter' }}">
+                    <input class="form-control btn btn-success" type="submit" value="{{ isset($culture) ? 'Hanova' : 'Hanampy' }}">
                 </div>
             </form>
         </div>

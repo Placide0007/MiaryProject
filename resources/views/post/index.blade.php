@@ -29,7 +29,7 @@
                                     <form action="{{ route('posts.destroy', $post) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-secondary btn-sm">Supprimer</button>
+                                        <button class="btn btn-secondary btn-sm">Hamafa</button>
                                     </form>
                                 @endif
                             </div>
@@ -45,7 +45,7 @@
                             <div class="mt-3 d-flex justify-content-between align-items-center">
                                 <div>
                                     <i class="bi bi-chat-square"></i>
-                                    {{ $post->comments->count() }} commentaire{{ $post->comments->count() > 1 ? 's' : '' }}
+                                    {{ $post->comments->count() }} Kaomantera
                                 </div>
                                 <form action="{{ route('posts.toggleLike', $post) }}" method="POST">
                                     @csrf

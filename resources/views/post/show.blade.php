@@ -27,7 +27,7 @@
                 <div class="input-group">
                     <input type="hidden" name="post_id" value="{{ $post->id }}">
                     <input name="comment" placeholder="Commenter" type="text" class="form-control bg-light">
-                    <button class="input-group-text btn btn-primary">Commenter</button>
+                    <button class="input-group-text btn btn-primary">Handefa kaomantera</button>
                 </div>
             </form>
             @foreach ($post->comments as $comment)
@@ -38,7 +38,7 @@
                             <form action="{{ route('comments.destroy', $comment) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-secondary btn-sm">Supprimer</button>
+                                <button class="btn btn-secondary btn-sm">Hamafa</button>
                             </form>
                         @endif
                     </div>
@@ -48,7 +48,7 @@
             @endforeach
         </div>
         <div class="col-md-3 right">
-            <a class="btn btn-primary" href="{{ route('posts.index') }}">Retour à la page d'accueil</a>
+            <a class="btn btn-primary" href="{{ route('posts.index') }}">Hiverina amin'ny Pejy fandraisana</a>
         </div>
     </div>
 @endsection
