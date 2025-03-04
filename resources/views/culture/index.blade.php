@@ -8,7 +8,7 @@
     <div class="row">
         @if ($cultures->isEmpty())
         <div class="col-md-3">
-            <a class="btn btn-primary" href="{{ route('premium') }}">Hijery misimisy kokoa (Premium)</a>
+            <a class="btn btn-success" href="{{ route('premium') }}">Hijery misimisy kokoa (Premium)</a>
         </div>
             <div class="col-md-6">
                 <p class="text-center lead text-light p-3">Aucune culture ajoutée</p>
