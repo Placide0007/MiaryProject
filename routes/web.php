@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\CultureController;
+use App\Http\Controllers\admin\PremiumController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\auth\AuthController;
 use App\Http\Controllers\CommentController;
@@ -29,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profil' , function(){
         return view('profil.profil');
     } )->name('profil');
+    Route::get('/premium',[ PremiumController::class ,'index'])->name('premium');
 });
 
 Route::resource('users', UserController::class);

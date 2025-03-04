@@ -11,17 +11,19 @@
             <div class="col-md-6">
                 <p class="text-center lead text-light p-3">Aucune culture ajoutée</p>
             </div>
-            @if (auth()->user()->isAdmin())
-                <div class="col-md-3 right">
+            <div class="col-md-3 right d-flex justify-content-between align-items-center">
+                <a class="btn btn-primary" href="{{ route('premium') }}">Hijery misimisy kokoa (Premium)</a>
+                @if (auth()->user()->isAdmin())
                     <a class="btn btn-primary" href="{{ route('cultures.create') }}">Voly vaovao</a>
-                </div>
-            @endif
+                @endif
+            </div>
         @else
-            @if (auth()->user()->isAdmin())
-                <div class="col-12 mb-5 d-flex justify-content-end">
+            <div class="col-12 mb-5 d-flex justify-content-between">
+                <a class="btn btn-success" href="{{ route('premium') }}">Hijery misimisy kokoa (Premium)</a>
+                @if (auth()->user()->isAdmin())
                     <a class="btn btn-primary" href="{{ route('cultures.create') }}">Voly vaovao</a>
-                </div>
-            @endif
+                @endif
+            </div>
             @foreach ($cultures as $culture)
                 <div class="col-md-3 mb-3">
                     <a class="text-decoration-none" href="{{ route('cultures.show', $culture) }}">
@@ -40,19 +42,19 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     @if (auth()->user()->isAdmin())
-                                    <form action="{{ route('cultures.edit', $culture) }}" method="GET">
-                                        @csrf
-                                        <button class="btn btn-sm btn-outline-success small">
-                                            modifier
-                                        </button>
-                                    </form>
-                                    <form action="{{ route('cultures.destroy', $culture) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-sm btn-outline-danger small">
-                                            supprimer
-                                        </button>
-                                    </form>
+                                        <form action="{{ route('cultures.edit', $culture) }}" method="GET">
+                                            @csrf
+                                            <button class="btn btn-sm btn-outline-success small">
+                                                modifier
+                                            </button>
+                                        </form>
+                                        <form action="{{ route('cultures.destroy', $culture) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-sm btn-outline-danger small">
+                                                supprimer
+                                            </button>
+                                        </form>
                                     @endif
                                 </div>
                                 <p class="text-end figure-caption small  rounded px-2">
@@ -68,5 +70,3 @@
         @endif
     </div>
 @endsection
-
-

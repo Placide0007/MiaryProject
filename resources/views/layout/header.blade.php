@@ -2,7 +2,7 @@
 
     <!-- Logo -->
     <a class="navbar-brand" href="">
-        <span class="fs-5 fw-bold text-success">AgriMada</span>
+        <span class="fs-5 fw-bold text-success">AgriMalagasy</span>
     </a>
 
     <!-- Bouton de menu (mobile) -->
